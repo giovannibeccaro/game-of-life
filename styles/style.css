@@ -1,0 +1,96 @@
+:root {
+  --transition-duration: 500ms;
+  --color: rgb(24, 67, 124);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+option {
+  font-family: inherit;
+}
+
+.square {
+  border: 1px solid black;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  transition-duration: var(--transition-duration);
+  overflow: hidden;
+}
+.square-color {
+  transition-duration: var(--transition-duration);
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+.square.non-active > .square-color {
+  transform: scale(0%);
+  background-color: white;
+}
+.square.active > .square-color {
+  transform: scale(100%);
+  background-color: var(--color);
+}
+
+button {
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid var(--color);
+  background-color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  filter: grayscale(1);
+  background-color: rgb(185, 185, 185);
+  cursor: not-allowed;
+}
+
+.btn-section {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.start-btn {
+  background-color: var(--color);
+  color: white;
+}
+.resume-btn {
+  background-color: white;
+  color: var(--color);
+}
+
+.speed-btn {
+  color: var(--color);
+  font-weight: 900;
+  padding-inline: 0.75rem;
+}
+
+.space-between-cells-section,
+.border-section,
+.rateo-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.colors {
+  display: flex;
+}
